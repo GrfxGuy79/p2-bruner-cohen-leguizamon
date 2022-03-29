@@ -16,4 +16,88 @@ html {
 
 body {
 	.monda();
+	color: black;
+}
+
+a {
+	text-decoration: none;
+}
+
+// HEADER
+header {
+	margin: 1rem 2rem;
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 8vh;
+
+		.logoimg {
+			width: 100%;
+			max-width: 200px;
+		}
+		.nav-links {
+			display: flex;
+			justify-content: space-around;
+			width: 50%;
+			text-transform: uppercase;
+			.julius();
+		}
+
+		.nav-links li {
+			list-style: none;
+		}
+
+		.nav-links a {
+			text-decoration: none;
+			color: black;
+			letter-spacing: 3px;
+			padding: 0.25rem 0;
+		}
+		.hover-border {
+			position: relative;
+		}
+
+		.hover-border::after {
+			content: "";
+			width: 0%;
+			height: 0.3rem;
+			position: absolute;
+			bottom: 0%;
+			left: 50%;
+			border-radius: 1.5rem;
+			transition: all 500ms ease-in-out;
+			background-image: @gmc-rainbow;
+		}
+
+		.hover-border:hover::after {
+			left: 0%;
+			width: 100%;
+		}
+		.burger {
+			display: none;
+		}
+
+		.burger div {
+			width: 25px;
+			height: 3px;
+			margin: 5px;
+			background-color: black;
+		}
+	}
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 680px) {
+	.nav-links {
+		position: absolute;
+		right: 0;
+		height: 25vh;
+		top: 12vh;
+		width: 50%;
+		background-color: blue;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 }
