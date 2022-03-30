@@ -17,3 +17,148 @@ html {
 body {
 	.monda();
 }
+
+.dates, .individualEvent {
+	.julius();
+}
+
+.dates {
+	h1, h2 {
+		padding: 0 5%;
+	}
+}
+
+.locations {
+	padding: 0 5%;
+	.monda();
+}
+
+.accordion {
+	background-color: #eee;
+	color: @black;
+	padding: 3%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+
+.accordion:after {
+	content: '\02795';
+	font-size: 13px;
+	color: #777;
+	float: right;
+	margin-left: 5px;
+}
+  
+.active:after {
+	content: "\2796";
+}
+
+.panel {
+	flex-direction: column;
+	display: none;
+	overflow: hidden;
+	a {
+		padding: 3%;
+		text-decoration: none;
+		color: @black;
+		.tickets {
+			float: right;
+		}	
+		}
+	a:hover {
+		background-color: @black;
+		color: @white;
+	}
+}
+
+.active, .accordion:hover {
+	background-color: @white;
+	color: @black;
+	border: solid 3px @black;
+}
+
+ul.breadcrumb {
+	padding: 0 5%;
+	list-style: none;
+	text-decoration: none;
+	.monda();
+
+	li {
+		display: inline;
+		font-size: 18px;
+		
+		a{
+			color: @black;
+		}
+		a:hover {
+			color: @gmc-indigo;
+		}
+	}
+
+	//TODO: look this up!
+	li+li:before {
+		padding: 8px;
+		color: @black;
+		content: "/\00a0";
+	}
+  }
+
+  .individualEvent {
+	  h1 {
+		padding: 0 5%; 
+	  }
+  }
+
+  .eventContent {
+	  display: flex;
+	  padding: 0 5%;
+	  .eventInfo {
+		  width: 70%;
+
+		  h2 {
+			  margin: 0;
+		  }
+
+		  .purchase {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+
+			div {
+				width: 30%;
+				background-color: @white;
+				padding: 2%;
+				text-align: center;
+				border: solid 1px;
+				a {
+					color: @black;
+					text-decoration: none;
+				}
+			}
+
+			div:hover {
+				background-color: @black;
+				text-decoration: underline;
+
+				a {
+					color: @white;
+				}
+			  }
+		  }
+	  }
+	  .eventImg {
+		width: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		img {
+			flex-shrink: 0.75;
+			min-width: 100%;
+			min-height: 100%;
+		}
+	}
+  }
