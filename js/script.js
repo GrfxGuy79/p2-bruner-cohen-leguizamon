@@ -1,3 +1,5 @@
+const navToggle = document.querySelector(".navbar_toggle");
+const links = document.querySelector(".main_nav");
 const params = new URLSearchParams(window.location.search);
 
 var date = document.querySelector('.date');
@@ -61,3 +63,7 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+navToggle.addEventListener("click", function () {
+	links.classList.toggle("show_nav");
+});
