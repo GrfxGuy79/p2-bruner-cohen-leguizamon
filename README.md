@@ -17,3 +17,8 @@ No issues to report.
 ## Resources
 
 - [Fontawesome](https://fontawesome.com)
+- [Accordion](https://www.w3schools.com/howto/howto_js_accordion.asp)
+- [URL Parameters](https://flaviocopes.com/urlsearchparams/)
+- [JS Dates](https://www.w3schools.com/js/js_date_formats.asp)
+- [Left and Right align](https://css-tricks.com/left-align-and-right-align-text-on-the-same-line/)
+- [Breadcrumbs](https://www.w3schools.com/howto/howto_css_breadcrumbs.asp)
