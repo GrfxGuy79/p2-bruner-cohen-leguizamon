@@ -87,6 +87,59 @@ header {
 	}
 }
 
+// Contact
+.h1-subpage {
+  font-family: @julius;
+  text-align: center;
+}
+
+.h2-subpage{
+  text-align: center;
+  font-family: @monda;
+}
+
+label, input, textarea {
+  display: block;
+  padding: .3rem;
+}
+
+input.btn {
+  display: block;
+  margin-top: .6rem;
+
+}
+
+.row {
+  margin-left: 1rem;
+}
+
+#comments {
+  height: 3rem;
+  width: 15rem;
+}
+
+p.text {
+  text-align: center;
+}
+
+ul li {
+list-style-type: none;
+padding: .2rem;
+text-align: center;
+}
+
+div.left {
+  display: block;
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 // MEDIA QUERIES
 @media screen and (max-width: 680px) {
 	.nav-links {
@@ -134,7 +187,7 @@ header {
 	float: right;
 	margin-left: 5px;
 }
-  
+
 .active:after {
 	content: "\2796";
 }
@@ -149,7 +202,7 @@ header {
 		color: @black;
 		.tickets {
 			float: right;
-		}	
+		}
 		}
 	a:hover {
 		background-color: @black;
@@ -172,13 +225,24 @@ ul.breadcrumb {
 	li {
 		display: inline;
 		font-size: 18px;
-		
+
 		a{
 			color: @black;
 		}
 		a:hover {
 			color: @gmc-indigo;
 		}
+
+		.contact-container {
+	    margin: 1em 2em;
+	  }
+
+	  .contact-info {
+	    text-align: center;
+	    word-wrap: break-word;
+	    white-space: normal;
+	    padding-top: 1rem;
+	  }
 	}
 
 	//TODO: look this up!
@@ -191,7 +255,7 @@ ul.breadcrumb {
 
   .individualEvent {
 	  h1 {
-		padding: 0 5%; 
+		padding: 0 5%;
 	  }
   }
 
@@ -246,3 +310,30 @@ ul.breadcrumb {
 		}
 	}
   }
+
+	@media screen and (min-width: 1024px) {
+	  .contact-container {
+	    margin: 0;
+	  }
+
+	  .contact-info{
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-end;
+	  }
+
+	  section.intouch {
+	    padding: 1rem;
+	    overflow:hidden;
+	    float:left;
+	  }
+
+	  section.flex {
+	    overflow:hidden;
+	    display: flex;
+	  }
+
+	  .laptop {
+	    padding-left: 1rem;
+	  }
+	}
