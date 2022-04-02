@@ -39,10 +39,10 @@ if(params.has('date')){
 
     var finalDate = (dateTest.getMonth()+1)+'.'+dateTest.getDate()+'.'+dateTest.getFullYear();
     var spelledOutDate = monthNames[dateTest.getMonth()]+' '+dateTest.getDate()+', '+dateTest.getFullYear();
-    
+
     date.textContent = spelledOutDate;
     breadDate.textContent = finalDate;
-   
+
 }
 
 var acc = document.getElementsByClassName("accordion");
@@ -67,3 +67,20 @@ for (i = 0; i < acc.length; i++) {
 navToggle.addEventListener("click", function () {
 	links.classList.toggle("show_nav");
 });
+
+// read more read less button
+function readmore() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("aboutBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}

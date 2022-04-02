@@ -88,56 +88,83 @@ header {
 }
 
 // Contact
-.h1-subpage {
-  font-family: @julius;
-  text-align: center;
-}
+.contact-container {
+	.h1-subpage {
+	  font-family: @julius;
+	  text-align: center;
+	}
 
-.h2-subpage{
-  text-align: center;
-  font-family: @monda;
-}
+	.h2-subpage {
+	  text-align: center;
+	  font-family: @monda;
+	}
 
-label, input, textarea {
-  display: block;
-  padding: .3rem;
-}
+	p {
+		text-align: center;
+		padding: 0 3rem 0rem 3rem;
+	}
+	label, input, textarea {
+	  display: block;
+	  padding: .3rem;
+	}
 
-input.btn {
-  display: block;
-  margin-top: .6rem;
+	input.btn {
+	  display: block;
+	  margin-top: .6rem;
+	}
 
-}
+	.row {
+	  margin-left: 1rem;
+	}
 
-.row {
-  margin-left: 1rem;
-}
+	#comments {
+	  height: 3rem;
+	  width: 15rem;
+	}
 
-#comments {
-  height: 3rem;
-  width: 15rem;
-}
+	p.text {
+	  text-align: center;
+	}
 
-p.text {
-  text-align: center;
-}
+	ul li {
+	list-style-type: none;
+	padding: .2rem;
+	text-align: center;
+	}
 
-ul li {
-list-style-type: none;
-padding: .2rem;
-text-align: center;
-}
+	div.left {
+	  display: block;
+	  text-align: center;
+	}
 
-div.left {
-  display: block;
-  text-align: center;
-}
+	form {
+	  display: inline-block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  text-align: left;
+	}
 
-form {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
+	#more {
+		display: none;
+	}
+
+	.btn, #aboutBtn {
+	align-items: center;
+	background: black;
+	border: 0;
+	border-radius: .2rem;
+	color: #FFFFFF;
+	padding: .4rem 1.5rem;
+	}
+
+	.btn:hover, #aboutBtn:hover {
+		background: @gmc-rainbow;
+	}
+
+	#aboutBtn {
+	display: block;
+	margin: 0 auto;
+	}
 }
 
 // MEDIA QUERIES
@@ -153,6 +180,7 @@ form {
 		flex-direction: column;
 		align-items: center;
 	}
+
 }
 
 .dates, .individualEvent {
@@ -232,18 +260,8 @@ ul.breadcrumb {
 		a:hover {
 			color: @gmc-indigo;
 		}
-
-		.contact-container {
-	    margin: 1em 2em;
-	  }
-
-	  .contact-info {
-	    text-align: center;
-	    word-wrap: break-word;
-	    white-space: normal;
-	    padding-top: 1rem;
-	  }
 	}
+
 
 	//TODO: look this up!
 	li+li:before {
@@ -313,19 +331,24 @@ ul.breadcrumb {
 
 	@media screen and (min-width: 1024px) {
 	  .contact-container {
-	    margin: 0;
+
+			p.text {
+				margin-left: 3rem;
+				width: 65%;
+			}
 	  }
 
 	  .contact-info{
 	    display: flex;
 	    flex-direction: column;
-	    align-items: flex-end;
+			padding: 1rem 0 0 4rem;
 	  }
 
 	  section.intouch {
 	    padding: 1rem;
 	    overflow:hidden;
 	    float:left;
+			margin-left: 5rem;
 	  }
 
 	  section.flex {
@@ -334,6 +357,6 @@ ul.breadcrumb {
 	  }
 
 	  .laptop {
-	    padding-left: 1rem;
+	    padding-left: 3rem;
 	  }
-	}
+}

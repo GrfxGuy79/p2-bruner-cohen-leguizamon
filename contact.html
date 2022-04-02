@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- CSS -->
+
 		<link rel="stylesheet/less" type="text/css" href="./css/style.less" />
         <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="16x16">
         <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="32x32">
@@ -52,6 +53,13 @@
     <main>
       <div class="contact-container">
         <h1 class="h1-subpage">Get in touch</h1>
+				<section>
+					<h2 class="h2-subpage"> About Us</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus <span id="dots">...</span><span id="more">vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+
+					<button onclick="readmore()" id="aboutBtn">Read more</button>
+				</section>
+
 				<section class="laptop">
 					<section class="intouch">
 					<h2 class="h2-subpage">Email Us</h2>
@@ -59,18 +67,16 @@
 	          <form class="form" id="form" name="test_form" method="post">
 
 	          <div class="row">
-	            <div class="leftside">
 	              <label for="name" class="label_input_wrap">Name</label>
 	              <input class="input" type="text" name="req_firstname" id="firstname" placeholder="First Name" />
 	            </div>
-	          </div>
+
 
 	          <div class="row">
-	            <div class="leftside">
 	              <label for="email" class="label_input_wrap">Email</label>
 	              <input class="input" type="email" name="req_email" id="email" placeholder="JSmith@example.com" />
 	            </div>
-	          </div>
+
 
 	          <div class="row">
 	            <div class="comments">
@@ -80,7 +86,7 @@
 	            </div>
 	            <div class="row">
 	              <div class="form-group">
-	                <input class="btn" type="submit" value="Send" />
+	                <input class="btn" type="button" value="Send" />
 	              </div>
 	            </div>
 	          </form>
@@ -90,18 +96,15 @@
 				<section class="flex">
 	        <div class="contact-info">
 	          <h2 class="h2-subpage">Contact Information</h2>
-	          <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, magnam!</p>
+	          <p class="text">Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Molestias, magnam!</p>
 	          <ul>
 	            <li>
-	              <span class="wrap"></span>
 	              <span class="text">123 Address Lane, AA 12345</span>
 	            </li>
 	            <li>
-	              <span class="wrap"></span>
 	              <span class="text">+1 (123) 456 7890</span>
 	            </li>
 	            <li>
-	              <span class="wrap"></span>
 	              <span class="text">GMChours@mywebsite.com</span>
 	            </li>
 	          </ul>
@@ -117,5 +120,6 @@
 
 		<!-- LESS -->
 		<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
