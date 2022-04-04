@@ -6,10 +6,16 @@ var date = document.querySelector('.date');
 var city = document.querySelector('.city');
 var breadDate = document.querySelector('.breadDate');
 var breadCity = document.querySelector('.breadCity');
+var breadMobileCity = document.querySelector('.breadMobileCity');
+var eventContent = document.querySelector('.eventMobileContent');
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
+
+var acc = document.getElementsByClassName("accordion");
+var accMobile = document.getElementsByClassName("accordionMobile");
+var i;
 
 if(params.has('city')){
     var cityParam = params.get('city');
@@ -25,44 +31,70 @@ if(params.has('city')){
     }
     city.textContent = cityName;
     breadCity.textContent = cityName;
-    //city.textContent = params.get('city');
+    breadMobileCity.textContent = '\u2039 '+cityName;
 }
 
-
-//TODO: translate date and format differently
 if(params.has('date')){
     var dateParam = params.get('date');
-    var dateTest = new Date(dateParam);
-    console.log(dateTest);
-    console.log(monthNames[dateTest.getMonth()]);
+    var date = new Date(dateParam);
 
-
-    var finalDate = (dateTest.getMonth()+1)+'.'+dateTest.getDate()+'.'+dateTest.getFullYear();
-    var spelledOutDate = monthNames[dateTest.getMonth()]+' '+dateTest.getDate()+', '+dateTest.getFullYear();
+    var finalDate = (date.getMonth()+1)+'.'+date.getDate()+'.'+date.getFullYear();
+    var spelledOutDate = monthNames[date.getMonth()]+' '+date.getDate()+', '+date.getFullYear();
 
     date.textContent = spelledOutDate;
     breadDate.textContent = finalDate;
-
 }
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+if(params.has('dates')){
+    var datesParam = params.get('dates');
+    var datesArray = datesParam.split(',');
+
+    for (j = 0; j < datesArray.length; j++) {
+        const newDiv = document.createElement('div');
+        newDiv.className = 'accordionMobile';
+
+        var date = new Date(datesArray[j]);
+        var spelledOutDate = monthNames[date.getMonth()]+' '+date.getDate()+', '+date.getFullYear();
+
+        const newDivContent = i
+        newDiv.innerHTML = spelledOutDate+' <span class="tickets">Tickets &#8250;</span>';
+
+        const newPanelDiv = document.createElement('div');
+        newPanelDiv.className = 'panelMobile';
+        newPanelDiv.innerHTML = '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat dolorem unde assumenda dolore cupiditate. Adipisci esse debitis nesciunt? Sapiente praesentium corporis deleniti cumque minus sint, labore id! Animi, molestiae.</p><div class="purchase"><div><a href=#>Buy Tickets</a></div></div>';
+   
+        const newPContent = document.createTextNode('Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat dolorem unde assumenda dolore cupiditate. Adipisci esse debitis nesciunt? Sapiente praesentium corporis deleniti cumque minus sint, labore id! Animi, molestiae.');
+
+        eventContent.appendChild(newDiv);
+        eventContent.appendChild(newPanelDiv);
+ 
+      }
+
+      for (i = 0; i < accMobile.length; i++) {
+        accMobile[i].addEventListener("click", function() {
+      
+          var panelMobile = this.nextElementSibling;
+          if (panelMobile.style.display === "flex") {
+            panelMobile.style.display = "none";
+          } else {
+            panelMobile.style.display = "flex";
+          }
+        });
+      }
+}
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
-
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "flex") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "flex";
-    }
-  });
-}
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+  
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "flex") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "flex";
+      }
+    });
+  }
 
 navToggle.addEventListener("click", function () {
 	links.classList.toggle("show_nav");
