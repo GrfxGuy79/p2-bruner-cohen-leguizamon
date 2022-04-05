@@ -36,10 +36,10 @@ if(params.has('city')){
 
 if(params.has('date')){
     var dateParam = params.get('date');
-    var date = new Date(dateParam);
+    var datetimeDate = new Date(dateParam);
 
-    var finalDate = (date.getMonth()+1)+'.'+date.getDate()+'.'+date.getFullYear();
-    var spelledOutDate = monthNames[date.getMonth()]+' '+date.getDate()+', '+date.getFullYear();
+    var finalDate = (datetimeDate.getMonth()+1)+'.'+datetimeDate.getDate()+'.'+datetimeDate.getFullYear();
+    var spelledOutDate = monthNames[datetimeDate.getMonth()]+' '+datetimeDate.getDate()+', '+datetimeDate.getFullYear();
 
     date.textContent = spelledOutDate;
     breadDate.textContent = finalDate;
