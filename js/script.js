@@ -1,9 +1,9 @@
 // NAVBAR TOGGLE
-const navToggle = document.querySelector(".navbar_toggle");
-const links = document.querySelector(".main_nav");
+const hamburger = document.getElementById("hamburger");
+const navUL = document.getElementById("nav-ul");
 
-navToggle.addEventListener("click", function () {
-	links.classList.toggle("show_nav");
+hamburger.addEventListener("click", () => {
+	navUL.classList.toggle("show");
 });
 
 // TOUR DATE

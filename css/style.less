@@ -25,48 +25,49 @@ a {
 
 // HEADER
 header {
-	margin: 1rem 2rem;
+	margin: 2rem 5rem;
 
 	nav {
-		.navbar {
-			display: flex;
-			justify-content: space-between;
-			width: 100vw;
-			padding-top: 2%;
-			padding-bottom: 2%;
-			font-size: 20px;
-		}
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
 		.logo {
-			margin-left: 5%;
-			color: @black;
-			font-size: 25px;
-			font-weight: bold;
-		}
-		.logo_header {
-			display: flex;
-			margin-left: 2%;
+			max-width: 200px;
+			width: 100%;
 		}
 
-		.main_nav {
+		.nav-ul {
 			display: flex;
-			width: 50%;
-			float: right;
-			margin-right: 2%;
-			justify-content: space-between;
-			list-style: none;
-		}
-		.main_nav li:hover {
-			background-color: gray;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			list-style-type: none;
+			font-size: 1.25rem;
 		}
 
-		.main_nav li {
-			display: inline;
+		.nav-ul li a {
+			display: inline-block;
 			color: @black;
+			.julius();
+			margin: 0 1rem;
+			padding: 0.25rem 0;
+			text-decoration: none;
 		}
-		.main_nav li a {
-			color: @black;
+
+		.hamburger {
+			background-color: transparent;
+			border: 0;
+			display: none;
+			font-size: 2rem;
+			cursor: pointer;
 		}
+
+		.hamburger:focus {
+			outline: none;
+		}
+
 		.hover-border {
 			position: relative;
 		}
@@ -90,6 +91,9 @@ header {
 	}
 }
 
+main {
+	margin: 0 5rem;
+}
 // TOUR PAGES
 .dates,
 .individualEvent {
@@ -134,14 +138,17 @@ header {
 	flex-direction: column;
 	display: none;
 	overflow: hidden;
+
 	a {
 		padding: 3%;
 		text-decoration: none;
 		color: @black;
+
 		.tickets {
 			float: right;
 		}
 	}
+
 	a:hover {
 		background-color: @black;
 		color: @white;
@@ -168,6 +175,7 @@ ul.breadcrumb {
 		a {
 			color: @black;
 		}
+
 		a:hover {
 			color: @gmc-indigo;
 		}
@@ -190,6 +198,7 @@ ul.breadcrumb {
 .eventContent {
 	display: flex;
 	padding: 0 5%;
+
 	.eventInfo {
 		width: 70%;
 
@@ -209,6 +218,7 @@ ul.breadcrumb {
 				padding: 2%;
 				text-align: center;
 				border: solid 1px;
+
 				a {
 					color: @black;
 					text-decoration: none;
@@ -225,12 +235,14 @@ ul.breadcrumb {
 			}
 		}
 	}
+
 	.eventImg {
 		width: 30%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		overflow: hidden;
+
 		img {
 			flex-shrink: 0.75;
 			min-width: 100%;
@@ -240,52 +252,28 @@ ul.breadcrumb {
 }
 
 // MEDIA QUERIES
-@media screen and (max-width: 680px) {
-	.navbar {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		width: 100vw;
-		padding-top: 2%;
-		padding-bottom: 2%;
-		font-size: 20px;
+@media only screen and (max-width: 768px) {
+	header {
+		margin: 1.5rem 2rem;
+
+		nav {
+			.nav-ul {
+				display: none;
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.nav-ul.show {
+				display: flex;
+			}
+
+			.hamburger {
+				display: block;
+			}
+		}
 	}
 
-	.main_nav {
-		display: none;
-	}
-
-	.show_nav {
-		padding-top: 2%;
-		display: flex;
-		width: 100vw;
-		height: 100vh;
-		flex-direction: column;
-		justify-content: flex-start;
-	}
-
-	.main_nav li {
-		width: 100%;
-		height: 50px;
-		font-size: 25px;
-		justify-content: center;
-		text-align: center;
-		padding: 0%;
-	}
-	.navbar_toggle {
-		margin-left: 5%;
-		margin-right: 5%;
-		font-size: 30px;
-		color: @black;
-		background: transparent;
-		border-color: transparent;
-		transition: all 0.3s linear;
-		cursor: pointer;
-		display: block;
-	}
-	.logo_header {
-		width: 100%;
-		justify-content: space-between;
-		margin-right: 2%;
+	main {
+		margin: 0 2rem;
 	}
 }
