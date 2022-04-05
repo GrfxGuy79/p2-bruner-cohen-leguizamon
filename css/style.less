@@ -94,9 +94,95 @@ header {
 main {
 	margin: 0 5rem;
 }
+
+// Contact
+.contact-container {
+	.h1-subpage {
+		font-family: @julius;
+		text-align: center;
+	}
+
+	.h2-subpage {
+		text-align: center;
+		font-family: @monda;
+	}
+
+	p {
+		text-align: center;
+		padding: 0 3rem 0rem 3rem;
+	}
+
+	label,
+	input,
+	textarea {
+		display: block;
+		padding: 0.3rem;
+	}
+
+	input.btn {
+		display: block;
+		margin-top: 0.6rem;
+	}
+
+	.row {
+		margin-left: 1rem;
+	}
+
+	#comments {
+		height: 3rem;
+		width: 15rem;
+	}
+
+	p.text {
+		text-align: center;
+	}
+
+	ul li {
+		list-style-type: none;
+		padding: 0.2rem;
+		text-align: center;
+	}
+
+	div.left {
+		display: block;
+		text-align: center;
+	}
+
+	form {
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+	}
+
+	#more {
+		display: none;
+	}
+
+	.btn,
+	#aboutBtn {
+		align-items: center;
+		background: black;
+		border: 0;
+		border-radius: 0.2rem;
+		color: #ffffff;
+		padding: 0.4rem 1.5rem;
+	}
+
+	.btn:hover,
+	#aboutBtn:hover {
+		background: @gmc-rainbow;
+	}
+
+	#aboutBtn {
+		display: block;
+		margin: 0 auto;
+	}
+}
+
 // TOUR PAGES
-.dates,
-.individualEvent {
+.dates h1,
+.individualEvent h1 {
 	.julius();
 }
 
@@ -107,8 +193,13 @@ main {
 	}
 }
 
-.locations {
+.locationsDesktop,
+.locationsMobile {
 	padding: 0 5%;
+	.monda();
+}
+
+.individualEvent {
 	.monda();
 }
 
@@ -125,13 +216,25 @@ main {
 .accordion:after {
 	content: "\02795";
 	font-size: 13px;
-	color: #777;
 	float: right;
 	margin-left: 5px;
 }
 
+.locationsMobile a {
+	display: flex;
+	flex-direction: column;
+	background-color: #eee;
+	color: @black;
+	padding: 5%;
+	text-align: center;
+	border: none;
+	outline: none;
+	margin: 10px 0;
+}
+
 .active:after {
 	content: "\2796";
+	color: @white;
 }
 
 .panel {
@@ -143,27 +246,31 @@ main {
 		padding: 3%;
 		text-decoration: none;
 		color: @black;
-
-		.tickets {
-			float: right;
-		}
 	}
 
 	a:hover {
-		background-color: @black;
+		background: @gmc-rainbow;
 		color: @white;
 	}
 }
 
+.panelMobile {
+	flex-direction: column;
+	display: none;
+	overflow: hidden;
+}
+
+.tickets {
+	float: right;
+}
+
 .active,
 .accordion:hover {
-	background-color: @white;
-	color: @black;
-	border: solid 3px @black;
+	border: solid 8px @white;
 }
 
 ul.breadcrumb {
-	padding: 0 5%;
+	padding: 0;
 	list-style: none;
 	text-decoration: none;
 	.monda();
@@ -181,7 +288,6 @@ ul.breadcrumb {
 		}
 	}
 
-	//TODO: look this up!
 	li + li:before {
 		padding: 8px;
 		color: @black;
@@ -189,50 +295,33 @@ ul.breadcrumb {
 	}
 }
 
+.breadMobileCity {
+	text-decoration: none;
+	color: @black;
+}
+
+.desktopIndEvent,
+.locationsDesktop {
+	display: inherit;
+}
+
+.mobileIndEvent,
+.locationsMobile {
+	display: none;
+}
+
 .individualEvent {
-	h1 {
-		padding: 0 5%;
-	}
+	padding: 0 5%;
 }
 
 .eventContent {
 	display: flex;
-	padding: 0 5%;
 
 	.eventInfo {
 		width: 70%;
 
 		h2 {
 			margin: 0;
-		}
-
-		.purchase {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-
-			div {
-				width: 30%;
-				background-color: @white;
-				padding: 2%;
-				text-align: center;
-				border: solid 1px;
-
-				a {
-					color: @black;
-					text-decoration: none;
-				}
-			}
-
-			div:hover {
-				background-color: @black;
-				text-decoration: underline;
-
-				a {
-					color: @white;
-				}
-			}
 		}
 	}
 
@@ -247,6 +336,53 @@ ul.breadcrumb {
 			flex-shrink: 0.75;
 			min-width: 100%;
 			min-height: 100%;
+		}
+	}
+}
+
+.eventMobileContent {
+	.panelMobile {
+		margin: 3%;
+		padding: 0 5%;
+	}
+
+	.accordionMobile {
+		margin: 2%;
+		padding: 5%;
+		border-bottom: solid 2px @black;
+		color: @black;
+		text-align: left;
+		outline: none;
+		transition: 0.4s;
+	}
+}
+
+.purchase {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	div {
+		width: 30%;
+		background-color: @white;
+		padding: 2%;
+		text-align: center;
+		border: solid 1px;
+
+		a {
+			color: @black;
+			text-decoration: none;
+		}
+	}
+
+	div:hover {
+		background: @gmc-rainbow;
+		text-decoration: underline;
+		border: none;
+
+		a {
+			color: @white;
 		}
 	}
 }
@@ -273,7 +409,52 @@ ul.breadcrumb {
 		}
 	}
 
+	.desktopIndEvent,
+	.locationsDesktop {
+		display: none;
+	}
+
+	.mobileIndEvent,
+	.locationsMobile {
+		display: inherit;
+	}
+
+	.eventContent {
+		flex-direction: column;
+	}
+
 	main {
 		margin: 0 2rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.contact-container {
+		p.text {
+			margin-left: 3rem;
+			width: 65%;
+		}
+	}
+
+	.contact-info {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 0 0 4rem;
+	}
+
+	section.intouch {
+		padding: 1rem;
+		overflow: hidden;
+		float: left;
+		margin-left: 5rem;
+	}
+
+	section.flex {
+		overflow: hidden;
+		display: flex;
+	}
+
+	.laptop {
+		padding-left: 3rem;
 	}
 }
