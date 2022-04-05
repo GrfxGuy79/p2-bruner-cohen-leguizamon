@@ -167,23 +167,8 @@ header {
 	}
 }
 
-// MEDIA QUERIES
-@media screen and (max-width: 680px) {
-	.nav-links {
-		position: absolute;
-		right: 0;
-		height: 25vh;
-		top: 12vh;
-		width: 50%;
-		background-color: blue;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-}
-
-.dates, .individualEvent {
+// TOUR AND INDIVIDUAL EVENT
+.dates h1, .individualEvent h1 {
 	.julius();
 }
 
@@ -193,8 +178,12 @@ header {
 	}
 }
 
-.locations {
+.locationsDesktop, .locationsMobile {
 	padding: 0 5%;
+	.monda();
+}
+
+.individualEvent {
 	.monda();
 }
 
@@ -211,13 +200,25 @@ header {
 .accordion:after {
 	content: '\02795';
 	font-size: 13px;
-	color: #777;
 	float: right;
 	margin-left: 5px;
 }
 
+.locationsMobile a {
+	display: flex;
+	flex-direction: column;
+	background-color: #eee;
+	color: @black;
+	padding: 5%;
+	text-align: center;
+	border: none;
+	outline: none;
+	margin: 10px 0;
+}
+
 .active:after {
 	content: "\2796";
+	color: @white;
 }
 
 .panel {
@@ -228,24 +229,29 @@ header {
 		padding: 3%;
 		text-decoration: none;
 		color: @black;
-		.tickets {
-			float: right;
-		}
-		}
+	}
 	a:hover {
-		background-color: @black;
+		background: @gmc-rainbow;
 		color: @white;
 	}
 }
 
+.panelMobile {
+	flex-direction: column;
+	display: none;
+	overflow: hidden;
+}
+
+.tickets {
+	float: right;
+}
+
 .active, .accordion:hover {
-	background-color: @white;
-	color: @black;
-	border: solid 3px @black;
+	border: solid 8px @white;
 }
 
 ul.breadcrumb {
-	padding: 0 5%;
+	padding: 0;
 	list-style: none;
 	text-decoration: none;
 	.monda();
@@ -262,101 +268,154 @@ ul.breadcrumb {
 		}
 	}
 
-
-	//TODO: look this up!
 	li+li:before {
 		padding: 8px;
 		color: @black;
 		content: "/\00a0";
 	}
-  }
+}
 
-  .individualEvent {
-	  h1 {
-		padding: 0 5%;
-	  }
-  }
+.breadMobileCity {
+	text-decoration: none;
+	color: @black;
+}
 
-  .eventContent {
-	  display: flex;
-	  padding: 0 5%;
-	  .eventInfo {
-		  width: 70%;
+.desktopIndEvent, .locationsDesktop {
+	display: inherit;
+}
 
-		  h2 {
-			  margin: 0;
-		  }
+.mobileIndEvent, .locationsMobile {
+	display: none;
+}
 
-		  .purchase {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
+.individualEvent {
+	padding: 0 5%;
+}
 
-			div {
-				width: 30%;
-				background-color: @white;
-				padding: 2%;
-				text-align: center;
-				border: solid 1px;
-				a {
-					color: @black;
-					text-decoration: none;
-				}
-			}
+.eventContent {
+	display: flex;
+	.eventInfo {
+		width: 70%;
 
-			div:hover {
-				background-color: @black;
-				text-decoration: underline;
-
-				a {
-					color: @white;
-				}
-			  }
-		  }
-	  }
-	  .eventImg {
-		width: 30%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		overflow: hidden;
-		img {
-			flex-shrink: 0.75;
-			min-width: 100%;
-			min-height: 100%;
+		h2 {
+			margin: 0;
 		}
 	}
-  }
+	.eventImg {
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	img {
+		flex-shrink: 0.75;
+		min-width: 100%;
+		min-height: 100%;
+	}
+}
+}
 
-	@media screen and (min-width: 1024px) {
-	  .contact-container {
+.eventMobileContent {
+	.panelMobile {
+		margin: 3%;
+		padding: 0 5%;
+	}
+	.accordionMobile {
+		margin: 2%;
+		padding: 5%;
+		border-bottom: solid 2px @black;
+		color: @black;
+		text-align: left;
+		outline: none;
+		transition: 0.4s;
+	}
 
-			p.text {
-				margin-left: 3rem;
-				width: 65%;
-			}
-	  }
+}
 
-	  .contact-info{
-	    display: flex;
-	    flex-direction: column;
-			padding: 1rem 0 0 4rem;
-	  }
+.purchase {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 
-	  section.intouch {
-	    padding: 1rem;
-	    overflow:hidden;
-	    float:left;
-			margin-left: 5rem;
-	  }
+	div {
+		width: 30%;
+		background-color: @white;
+		padding: 2%;
+		text-align: center;
+		border: solid 1px;
+		a {
+			color: @black;
+			text-decoration: none;
+		}
+	}
 
-	  section.flex {
-	    overflow:hidden;
-	    display: flex;
-	  }
+	div:hover {
+		background: @gmc-rainbow;
+		text-decoration: underline;
+		border: none;
 
-	  .laptop {
-	    padding-left: 3rem;
-	  }
+		a {
+			color: @white;
+		}
+	}
+	}
+
+// MEDIA QUERIES
+@media screen and (max-width: 680px) {
+	.nav-links {
+		position: absolute;
+		right: 0;
+		height: 25vh;
+		top: 12vh;
+		width: 50%;
+		background-color: blue;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.desktopIndEvent, .locationsDesktop {
+		display: none;
+	}
+
+	.mobileIndEvent, .locationsMobile {
+		display: inherit;
+	}
+
+	.eventContent {
+		flex-direction: column;
+	}
+
+}
+
+@media screen and (min-width: 1024px) {
+	.contact-container {
+
+		p.text {
+			margin-left: 3rem;
+			width: 65%;
+		}
+	}
+
+	.contact-info{
+	display: flex;
+	flex-direction: column;
+		padding: 1rem 0 0 4rem;
+	}
+
+	section.intouch {
+	padding: 1rem;
+	overflow:hidden;
+	float:left;
+		margin-left: 5rem;
+	}
+
+	section.flex {
+	overflow:hidden;
+	display: flex;
+	}
+
+	.laptop {
+	padding-left: 3rem;
+	}
 }
