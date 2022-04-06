@@ -1,20 +1,7 @@
-<<<<<<< HEAD
-const navToggle = document.querySelector(".navbar_toggle");
-const links = document.querySelector(".main_nav");
-const params = new URLSearchParams(window.location.search);
-const clientID = 'MjExMTY5MDV8MTY0OTIwNTYzMS42ODI1NjMz';
-
-var date = document.querySelector('.date');
-var city = document.querySelector('.city');
-var breadDate = document.querySelector('.breadDate');
-var breadCity = document.querySelector('.breadCity');
-var breadMobileCity = document.querySelector('.breadMobileCity');
-var eventContent = document.querySelector('.eventMobileContent');
-var localEvents = document.querySelectorAll('.localEvents');
-=======
 // NAVBAR TOGGLE
 const hamburger = document.getElementById("hamburger");
 const navUL = document.getElementById("nav-ul");
+const clientID = 'MjExMTY5MDV8MTY0OTIwNTYzMS42ODI1NjMz';
 
 hamburger.addEventListener("click", () => {
 	navUL.classList.toggle("show");
@@ -22,7 +9,6 @@ hamburger.addEventListener("click", () => {
 
 // TOUR DATE
 const params = new URLSearchParams(window.location.search);
->>>>>>> 63ddca4ac776d6abd1806c039b6061cd5eb94bc0
 
 var date = document.querySelector(".date");
 var city = document.querySelector(".city");
@@ -30,6 +16,8 @@ var breadDate = document.querySelector(".breadDate");
 var breadCity = document.querySelector(".breadCity");
 var breadMobileCity = document.querySelector(".breadMobileCity");
 var eventContent = document.querySelector(".eventMobileContent");
+var desktoplocalEvents = document.querySelector(".desktopLocalEvents");
+var mobilelocalEvents = document.querySelector(".mobileLocalEvents");
 
 const monthNames = [
 	"January",
@@ -50,7 +38,6 @@ var acc = document.getElementsByClassName("accordion");
 var accMobile = document.getElementsByClassName("accordionMobile");
 var i;
 
-<<<<<<< HEAD
 if(params.has('city')){
     var cityParam = params.get('city');
     var cityName = '';
@@ -76,26 +63,9 @@ if(params.has('city')){
         return res.json();
     })
     .then(function(res) {
-        console.log(res.events[0].title);
-        localEvents.textContent = res.events[0].title;
+        desktoplocalEvents.innerHTML = printLocalEvents(res);
+        mobilelocalEvents.innerHTML = printLocalEvents(res);
     })
-=======
-if (params.has("city")) {
-	var cityParam = params.get("city");
-	var cityName = "";
-	if (cityParam == "nyc") {
-		cityName = "New York City, NY";
-	}
-	if (cityParam == "mem") {
-		cityName = "Memphis, TN";
-	}
-	if (cityParam == "atl") {
-		cityName = "Atlanta, GA";
-	}
-	city.textContent = cityName;
-	breadCity.textContent = cityName;
-	breadMobileCity.textContent = "\u2039 " + cityName;
->>>>>>> 63ddca4ac776d6abd1806c039b6061cd5eb94bc0
 }
 
 if (params.has("date")) {
@@ -193,4 +163,12 @@ function readmore() {
 		btnText.innerHTML = "Read less";
 		moreText.style.display = "inline";
 	}
+}
+
+function printLocalEvents(res) {
+    var localEventsHTML = '';
+    for(var i = 0; i < res.events.length; i++){
+        localEventsHTML += '<a href="'+res.events[i].url+'" target="_blank">'+res.events[i].short_title+'</a>';
+    }
+    return localEventsHTML;
 }
