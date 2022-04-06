@@ -6,6 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="robots" content="noindex" />
 		<meta name="AdsBot-Google" content="noindex" />
+		<!-- FAVICON -->
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="96x96" />
 
 		<!-- FONTAWESOME -->
 		<link
@@ -14,59 +18,78 @@
 		/>
 		<!-- CSS -->
 		<link rel="stylesheet/less" type="text/css" href="./css/style.less" />
-		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="96x96" />
 
 		<title>Gay Men's Chorus</title>
 	</head>
 
 	<body>
-		<div class="container">
-			<!-- HEADER -->
-			<header>
+		<!-- HEADER -->
+		<div class="border-bar"></div>
+
+		<header>
+			<div class="container">
 				<!-- NAVIGATION-->
 				<nav>
-					<div class="logo">
-						<a href="index.html">
-							<img
-							src="./img/MainLogo.png"
-							class="logoimg"
-							alt="logo"
-							title="Logo"
-							/>
-						</a>
-					</div>
-					<ul class="nav-links">
+					<img src="./img/MainLogo.png" alt="logo" class="logo" />
+
+					<button class="hamburger" id="hamburger">
+						<i class="fas fa-bars"></i>
+					</button>
+
+					<ul class="nav-ul" id="nav-ul">
 						<li>
-							<a href="#" class="hover-border">Home</a>
+							<a href="index.html" class="hover-border">Home</a>
 						</li>
 						<li>
-							<a href="tour.html" class="hover-border">Tour</a>
+							<a href="tour.html" class="hover-border">Tour Dates</a>
 						</li>
 						<li>
-							<a href="contact.html" class="hover-border">Contact</a>
+							<a href="contact.html" class="hover-border">Contact Us</a>
 						</li>
 					</ul>
-					<!-- MOBILE NAV BURGER -->
-					<div class="burger">
-						<div class="line1"></div>
-						<div class="line2"></div>
-						<div class="line3"></div>
-					</div>
 				</nav>
-			</header>
+			</div>
+		</header>
 
-			<!-- MAIN -->
-			<main>
-				<section></section>
-			</main>
+		<!-- MAIN -->
+		<main>
+			<div class="container">
+				<section><h1>CONTENT</h1></section>
+			</div>
+		</main>
 
-			<!-- FOOTER -->
-			<footer></footer>
-		</div>
+		<!-- FOOTER -->
+		<footer>
+			<div class="border-bar"></div>
+			<div class="container">
+				<div class="l-footer">
+					<img src="./img/MainLogo.png" alt="logo" class="fLogo" />
+				</div>
+
+				<div class="copy">Copyright &copy; 2022 - All Rights Reserved.</div>
+
+				<div class="r-footer">
+					<ul class="fNav" id="fNav">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="tour.html">Tour Dates</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
 
 		<!-- LESS -->
 		<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
+		<!-- CUSTOM JS -->
+		<script src="./js/script.js"></script>
 	</body>
 </html>

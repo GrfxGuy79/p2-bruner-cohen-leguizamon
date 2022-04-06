@@ -7,7 +7,7 @@ body {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 html {
@@ -17,43 +17,67 @@ html {
 body {
 	.monda();
 	color: black;
+	position: relative;
+	min-height: 100vh;
 }
 
 a {
 	text-decoration: none;
 }
 
+.border-bar {
+	height: 2px;
+	width: 100%;
+	background: @gmc-rainbow;
+}
+
 // HEADER
 header {
-	margin: 1rem 2rem;
+	.container {
+		margin: 1.5rem 5rem;
+	}
+
 	nav {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
-		min-height: 8vh;
+		justify-content: space-between;
+		flex-wrap: wrap;
 
-		.logoimg {
-			width: 100%;
+		.logo {
 			max-width: 200px;
+			width: 100%;
 		}
-		.nav-links {
+
+		.nav-ul {
 			display: flex;
-			justify-content: space-around;
-			width: 50%;
-			text-transform: uppercase;
+			align-items: center;
+			justify-content: center;
+			padding: 0;
+			list-style-type: none;
+			font-size: 1.25rem;
+		}
+
+		.nav-ul li a {
+			display: inline-block;
+			color: @black;
 			.julius();
-		}
-
-		.nav-links li {
-			list-style: none;
-		}
-
-		.nav-links a {
-			text-decoration: none;
-			color: black;
-			letter-spacing: 3px;
+			margin: 0 1rem;
 			padding: 0.25rem 0;
+			text-decoration: none;
 		}
+
+		.hamburger {
+			background-color: transparent;
+			border: 0;
+			display: none;
+			font-size: 2rem;
+			cursor: pointer;
+		}
+
+		.hamburger:focus {
+			outline: none;
+		}
+
 		.hover-border {
 			position: relative;
 		}
@@ -74,111 +98,118 @@ header {
 			left: 0%;
 			width: 100%;
 		}
-		.burger {
-			display: none;
-		}
+	}
+}
 
-		.burger div {
-			width: 25px;
-			height: 3px;
-			margin: 5px;
-			background-color: black;
-		}
+// MAIN SECTIONS
+main {
+	.container {
+		margin: 0 5rem;
 	}
 }
 
 // Contact
 .contact-container {
+	padding-bottom: 7rem;
+
 	.h1-subpage {
-	  font-family: @julius;
-	  text-align: center;
+		.julius();
+		text-align: center;
 	}
 
 	.h2-subpage {
-	  text-align: center;
-	  font-family: @monda;
+		text-align: center;
+		.monda();
 	}
 
 	p {
 		text-align: center;
 		padding: 0 3rem 0rem 3rem;
 	}
-	label, input, textarea {
-	  display: block;
-	  padding: .3rem;
+
+	label,
+	input,
+	textarea {
+		display: block;
+		padding: 0.3rem;
 	}
 
 	input.btn {
-	  display: block;
-	  margin-top: .6rem;
+		display: block;
+		margin-top: 0.6rem;
 	}
 
 	.row {
-	  margin-left: 1rem;
+		margin-left: 1rem;
 	}
 
 	#comments {
-	  height: 3rem;
-	  width: 15rem;
+		height: 3rem;
+		width: 15rem;
 	}
 
 	p.text {
-	  text-align: center;
+		text-align: center;
 	}
 
 	ul li {
-	list-style-type: none;
-	padding: .2rem;
-	text-align: center;
+		list-style-type: none;
+		padding: 0.2rem;
+		text-align: center;
 	}
 
 	div.left {
-	  display: block;
-	  text-align: center;
+		display: block;
+		text-align: center;
 	}
 
 	form {
-	  display: inline-block;
-	  margin-left: auto;
-	  margin-right: auto;
-	  text-align: left;
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
 	}
 
 	#more {
 		display: none;
 	}
 
-	.btn, #aboutBtn {
-	align-items: center;
-	background: black;
-	border: 0;
-	border-radius: .2rem;
-	color: #FFFFFF;
-	padding: .4rem 1.5rem;
+	.btn,
+	#aboutBtn {
+		align-items: center;
+		background: black;
+		border: 0;
+		border-radius: 0.2rem;
+		color: #ffffff;
+		padding: 0.4rem 1.5rem;
 	}
 
-	.btn:hover, #aboutBtn:hover {
+	.btn:hover,
+	#aboutBtn:hover {
 		background: @gmc-rainbow;
 	}
 
 	#aboutBtn {
-	display: block;
-	margin: 0 auto;
+		display: block;
+		margin: 0 auto;
 	}
 }
 
-// TOUR AND INDIVIDUAL EVENT
-.dates h1, .individualEvent h1 {
+// TOUR PAGES
+.dates h1,
+.individualEvent h1 {
 	.julius();
 }
 
 .dates {
-	h1, h2 {
+	h1,
+	h2 {
 		padding: 0 5%;
 	}
 }
 
-.locationsDesktop, .locationsMobile {
+.locationsDesktop,
+.locationsMobile {
 	padding: 0 5%;
 	.monda();
 }
@@ -198,7 +229,7 @@ header {
 }
 
 .accordion:after {
-	content: '\02795';
+	content: "\02795";
 	font-size: 13px;
 	float: right;
 	margin-left: 5px;
@@ -225,11 +256,13 @@ header {
 	flex-direction: column;
 	display: none;
 	overflow: hidden;
+
 	a {
 		padding: 3%;
 		text-decoration: none;
 		color: @black;
 	}
+
 	a:hover {
 		background: @gmc-rainbow;
 		color: @white;
@@ -246,7 +279,8 @@ header {
 	float: right;
 }
 
-.active, .accordion:hover {
+.active,
+.accordion:hover {
 	border: solid 8px @white;
 }
 
@@ -260,15 +294,16 @@ ul.breadcrumb {
 		display: inline;
 		font-size: 18px;
 
-		a{
+		a {
 			color: @black;
 		}
+
 		a:hover {
 			color: @gmc-indigo;
 		}
 	}
 
-	li+li:before {
+	li + li:before {
 		padding: 8px;
 		color: @black;
 		content: "/\00a0";
@@ -280,11 +315,13 @@ ul.breadcrumb {
 	color: @black;
 }
 
-.desktopIndEvent, .locationsDesktop {
+.desktopIndEvent,
+.locationsDesktop {
 	display: inherit;
 }
 
-.mobileIndEvent, .locationsMobile {
+.mobileIndEvent,
+.locationsMobile {
 	display: none;
 }
 
@@ -294,6 +331,7 @@ ul.breadcrumb {
 
 .eventContent {
 	display: flex;
+
 	.eventInfo {
 		width: 70%;
 
@@ -301,18 +339,20 @@ ul.breadcrumb {
 			margin: 0;
 		}
 	}
+
 	.eventImg {
-	width: 30%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
-	img {
-		flex-shrink: 0.75;
-		min-width: 100%;
-		min-height: 100%;
+		width: 30%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+
+		img {
+			flex-shrink: 0.75;
+			min-width: 100%;
+			min-height: 100%;
+		}
 	}
-}
 }
 
 .eventMobileContent {
@@ -320,6 +360,7 @@ ul.breadcrumb {
 		margin: 3%;
 		padding: 0 5%;
 	}
+
 	.accordionMobile {
 		margin: 2%;
 		padding: 5%;
@@ -329,7 +370,6 @@ ul.breadcrumb {
 		outline: none;
 		transition: 0.4s;
 	}
-
 }
 
 .purchase {
@@ -344,6 +384,7 @@ ul.breadcrumb {
 		padding: 2%;
 		text-align: center;
 		border: solid 1px;
+
 		a {
 			color: @black;
 			text-decoration: none;
@@ -359,26 +400,83 @@ ul.breadcrumb {
 			color: @white;
 		}
 	}
+}
+
+// FOOTER
+footer {
+	padding-top: 7rem;
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+	height: 100px;
+
+	.container {
+		margin: 1rem 5rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		color: @black;
 	}
 
-// MEDIA QUERIES
-@media screen and (max-width: 680px) {
-	.nav-links {
-		position: absolute;
-		right: 0;
-		height: 25vh;
-		top: 12vh;
-		width: 50%;
-		background-color: blue;
+	.fLogo {
+		max-width: 100px;
+		margin: 0;
+	}
+
+	.copy {
+		font-size: 0.65rem;
+		margin: 1rem 0;
+	}
+
+	.fNav {
+		margin: 0;
+		padding: 0;
 		display: flex;
 		flex-direction: column;
+		list-style-type: none;
 		align-items: center;
+		font-size: 0.75rem;
 	}
-	.desktopIndEvent, .locationsDesktop {
+
+	.fnav li a {
+		text-decoration: none;
+		padding: 0;
+		color: @black;
+	}
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 768px) {
+	header {
+		.container {
+			margin: 1.5rem 2rem;
+		}
+
+		nav {
+			.nav-ul {
+				display: none;
+				flex-direction: column;
+				width: 100%;
+			}
+
+			.nav-ul.show {
+				display: flex;
+			}
+
+			.hamburger {
+				display: block;
+			}
+		}
+	}
+
+	.desktopIndEvent,
+	.locationsDesktop {
 		display: none;
 	}
 
-	.mobileIndEvent, .locationsMobile {
+	.mobileIndEvent,
+	.locationsMobile {
 		display: inherit;
 	}
 
@@ -386,36 +484,70 @@ ul.breadcrumb {
 		flex-direction: column;
 	}
 
+	main {
+		.container {
+			margin: 0 2rem;
+		}
+	}
+
+	footer {
+		.container {
+			margin: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			justify-content: center;
+			color: @black;
+		}
+
+		.fLogo {
+			max-width: 100px;
+			order: 0;
+		}
+
+		.copy {
+			order: 2;
+		}
+
+		.fNav {
+			order: 1;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.fNav li a {
+			padding: 0 1rem;
+		}
+	}
 }
 
 @media screen and (min-width: 1024px) {
 	.contact-container {
-
 		p.text {
 			margin-left: 3rem;
 			width: 65%;
 		}
 	}
 
-	.contact-info{
-	display: flex;
-	flex-direction: column;
+	.contact-info {
+		display: flex;
+		flex-direction: column;
 		padding: 1rem 0 0 4rem;
 	}
 
 	section.intouch {
-	padding: 1rem;
-	overflow:hidden;
-	float:left;
+		padding: 1rem;
+		overflow: hidden;
+		float: left;
 		margin-left: 5rem;
 	}
 
 	section.flex {
-	overflow:hidden;
-	display: flex;
+		overflow: hidden;
+		display: flex;
 	}
 
 	.laptop {
-	padding-left: 3rem;
+		padding-left: 3rem;
 	}
 }
