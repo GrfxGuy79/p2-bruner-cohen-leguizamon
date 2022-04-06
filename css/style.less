@@ -22,11 +22,16 @@ body {
 a {
 	text-decoration: none;
 }
-
+.border-bar {
+	height: 2px;
+	width: 100%;
+	background: @gmc-rainbow;
+}
 // HEADER
 header {
-	margin: 2rem 5rem;
-
+	.container {
+		margin: 1.5rem 5rem;
+	}
 	nav {
 		display: flex;
 		align-items: center;
@@ -91,8 +96,11 @@ header {
 	}
 }
 
+// MAIN SECTIONS
 main {
-	margin: 0 5rem;
+	.container {
+		margin: 0 5rem;
+	}
 }
 
 // Contact
@@ -387,11 +395,49 @@ ul.breadcrumb {
 	}
 }
 
+// FOOTER
+footer {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+
+	.container {
+		margin: 1rem 5rem;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		color: @black;
+	}
+	.fLogo {
+		max-width: 100px;
+		margin: 0;
+	}
+	.copy {
+		font-size: 0.65rem;
+		margin: 1rem 0;
+	}
+	.fNav {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+		align-items: center;
+		font-size: 0.75rem;
+	}
+	.fnav li a {
+		text-decoration: none;
+		padding: 0;
+		color: @black;
+	}
+}
 // MEDIA QUERIES
 @media only screen and (max-width: 768px) {
 	header {
-		margin: 1.5rem 2rem;
-
+		.container {
+			margin: 1.5rem 2rem;
+		}
 		nav {
 			.nav-ul {
 				display: none;
@@ -424,7 +470,35 @@ ul.breadcrumb {
 	}
 
 	main {
-		margin: 0 2rem;
+		.container {
+			margin: 0 2rem;
+		}
+	}
+
+	footer {
+		.container {
+			margin: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			justify-content: center;
+			color: @black;
+		}
+		.fLogo {
+			max-width: 100px;
+			order: 0;
+		}
+		.copy {
+			order: 2;
+		}
+		.fNav {
+			order: 1;
+			display: flex;
+			flex-direction: row;
+		}
+		.fNav li a {
+			padding: 0 1rem;
+		}
 	}
 }
 
