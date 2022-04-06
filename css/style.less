@@ -216,6 +216,19 @@ main {
 
 .individualEvent {
 	.monda();
+	padding: 0 5%;
+	.mobileLocalEvents, .desktopLocalEvents {
+		display: flex;
+		flex-direction: column;
+		a {
+			text-decoration: none;
+			color: @black;
+			font-size: 0.7em;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+}
 }
 
 .accordion {
@@ -325,10 +338,6 @@ ul.breadcrumb {
 	display: none;
 }
 
-.individualEvent {
-	padding: 0 5%;
-}
-
 .eventContent {
 	display: flex;
 
@@ -353,6 +362,7 @@ ul.breadcrumb {
 			min-height: 100%;
 		}
 	}
+
 }
 
 .eventMobileContent {
