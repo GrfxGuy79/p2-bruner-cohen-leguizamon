@@ -1,6 +1,7 @@
 const navToggle = document.querySelector(".navbar_toggle");
 const links = document.querySelector(".main_nav");
 const params = new URLSearchParams(window.location.search);
+const clientID = 'MjExMTY5MDV8MTY0OTIwNTYzMS42ODI1NjMz';
 
 var date = document.querySelector('.date');
 var city = document.querySelector('.city');
@@ -8,6 +9,7 @@ var breadDate = document.querySelector('.breadDate');
 var breadCity = document.querySelector('.breadCity');
 var breadMobileCity = document.querySelector('.breadMobileCity');
 var eventContent = document.querySelector('.eventMobileContent');
+var localEvents = document.querySelectorAll('.localEvents');
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
@@ -20,18 +22,31 @@ var i;
 if(params.has('city')){
     var cityParam = params.get('city');
     var cityName = '';
+    var state = '';
     if(cityParam == 'nyc'){
         cityName = 'New York City, NY';
+        state = 'NY'
     }
     if(cityParam == 'mem'){
         cityName = 'Memphis, TN';
+        state = 'TN'
     }
     if(cityParam == 'atl'){
         cityName = 'Atlanta, GA';
+        state = 'GA'
     }
     city.textContent = cityName;
     breadCity.textContent = cityName;
     breadMobileCity.textContent = '\u2039 '+cityName;
+
+    fetch('https://api.seatgeek.com/2/events?client_id='+clientID+'&venue.state='+state)
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(res) {
+        console.log(res.events[0].title);
+        localEvents.textContent = res.events[0].title;
+    })
 }
 
 if(params.has('date')){
