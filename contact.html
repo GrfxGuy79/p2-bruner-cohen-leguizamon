@@ -24,27 +24,30 @@
 
 	<body>
 		<!-- HEADER -->
+		<div class="border-bar"></div>
 		<header>
-			<!-- NAVIGATION-->
-			<nav>
-				<img src="./img/MainLogo.png" alt="logo" class="logo" />
+			<div class="container">
+				<!-- NAVIGATION-->
+				<nav>
+					<img src="./img/MainLogo.png" alt="logo" class="logo" />
 
-				<button class="hamburger" id="hamburger">
-					<i class="fas fa-bars"></i>
-				</button>
+					<button class="hamburger" id="hamburger">
+						<i class="fas fa-bars"></i>
+					</button>
 
-				<ul class="nav-ul" id="nav-ul">
-					<li>
-						<a href="index.html" class="hover-border">Home</a>
-					</li>
-					<li>
-						<a href="tour.html" class="hover-border">Tour Dates</a>
-					</li>
-					<li>
-						<a href="contact.html" class="hover-border">Contact Us</a>
-					</li>
-				</ul>
-			</nav>
+					<ul class="nav-ul" id="nav-ul">
+						<li>
+							<a href="index.html" class="hover-border">Home</a>
+						</li>
+						<li>
+							<a href="tour.html" class="hover-border">Tour Dates</a>
+						</li>
+						<li>
+							<a href="contact.html" class="hover-border">Contact Us</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 
 		<!-- MAIN -->
@@ -144,10 +147,34 @@
 		</main>
 
 		<!-- FOOTER -->
-		<footer></footer>
+		<footer>
+			<div class="border-bar"></div>
+			<div class="container">
+				<div class="l-footer">
+					<img src="./img/MainLogo.png" alt="logo" class="fLogo" />
+				</div>
+
+				<div class="copy">Copyright &copy; 2022 - All Rights Reserved.</div>
+
+				<div class="r-footer">
+					<ul class="fNav" id="fNav">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="tour.html">Tour Dates</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
 
 		<!-- LESS -->
 		<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
-		<script src="js/script.js"></script>
+		<!-- CUSTOM JS -->
+		<script src="./js/script.js"></script>
 	</body>
 </html>
