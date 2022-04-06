@@ -4,122 +4,177 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="robots" content="noindex" />
+		<meta name="AdsBot-Google" content="noindex" />
+		<!-- FAVICON -->
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="96x96" />
 
+		<!-- FONTAWESOME -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+		/>
 		<!-- CSS -->
-
 		<link rel="stylesheet/less" type="text/css" href="./css/style.less" />
-        <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="16x16">
-        <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="img/GMCLogo1.png" sizes="96x96">
 
-		<title>Gay Men's Chorus - Contact</title>
+		<title>Gay Men's Chorus</title>
 	</head>
 
 	<body>
-		<div class="container">
-			<!-- HEADER -->
-			<header>
+		<!-- HEADER -->
+		<div class="border-bar"></div>
+		<header>
+			<div class="container">
 				<!-- NAVIGATION-->
-        <nav>
-          <div class="logo">
-            <img
-              src="./img/MainLogo.png"
-              class="logoimg"
-              alt="logo"
-              title="Logo"
-            />
-          </div>
-          <ul class="nav-links">
-            <li>
-              <a href="index.html" class="hover-border">Home</a>
-            </li>
-            <li>
-              <a href="tour.html" class="hover-border">Tour</a>
-            </li>
-            <li>
-              <a href="contact.html" class="hover-border">Contact</a>
-            </li>
-          </ul>
-          <!-- MOBILE NAV BURGER -->
-          <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-        </nav>
-      </header>
+				<nav>
+					<img src="./img/MainLogo.png" alt="logo" class="logo" />
 
-			<!-- MAIN -->
-    <main>
-      <div class="contact-container">
-        <h1 class="h1-subpage">Get in touch</h1>
+					<button class="hamburger" id="hamburger">
+						<i class="fas fa-bars"></i>
+					</button>
+
+					<ul class="nav-ul" id="nav-ul">
+						<li>
+							<a href="index.html" class="hover-border">Home</a>
+						</li>
+						<li>
+							<a href="tour.html" class="hover-border">Tour Dates</a>
+						</li>
+						<li>
+							<a href="contact.html" class="hover-border">Contact Us</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<!-- MAIN -->
+		<main>
+			<div class="contact-container">
+				<h1 class="h1-subpage">Get in touch</h1>
 				<section>
-					<h2 class="h2-subpage"> About Us</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus <span id="dots">...</span><span id="more">vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
-
+					<h2 class="h2-subpage">About Us</h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+						imperdiet, nulla et dictum interdum, nisi lorem egestas vitae
+						scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices
+						nec congue eget, auctor vitae massa. Fusce luctus
+						<span id="dots">...</span
+						><span id="more"
+							>vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed
+							ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis
+							imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida
+							venenatis. Integer fringilla congue eros non fermentum. Sed
+							dapibus pulvinar nibh tempor porta.</span
+						>
+					</p>
 					<button onclick="readmore()" id="aboutBtn">Read more</button>
 				</section>
 
 				<section class="laptop">
 					<section class="intouch">
-					<h2 class="h2-subpage">Email Us</h2>
-	        <div class="left">
-	          <form class="form" id="form" name="test_form" method="post">
+						<h2 class="h2-subpage">Email Us</h2>
+						<div class="left">
+							<form class="form" id="form" name="test_form" method="post">
+								<div class="row">
+									<label for="name" class="label_input_wrap">Name</label>
+									<input
+										class="input"
+										type="text"
+										name="req_firstname"
+										id="firstname"
+										placeholder="First Name"
+									/>
+								</div>
 
-	          <div class="row">
-	              <label for="name" class="label_input_wrap">Name</label>
-	              <input class="input" type="text" name="req_firstname" id="firstname" placeholder="First Name" />
-	            </div>
+								<div class="row">
+									<label for="email" class="label_input_wrap">Email</label>
+									<input
+										class="input"
+										type="email"
+										name="req_email"
+										id="email"
+										placeholder="JSmith@example.com"
+									/>
+								</div>
 
+								<div class="row">
+									<div class="comments">
+										<label for="comments" class="label_input_wrap"
+											>Comments</label
+										>
+										<textarea
+											class="textarea"
+											name="comments"
+											id="comments"
+											placeholder="Type your message here"
+										></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group">
+										<input class="btn" type="button" value="Send" />
+									</div>
+								</div>
+							</form>
+						</div>
+					</section>
 
-	          <div class="row">
-	              <label for="email" class="label_input_wrap">Email</label>
-	              <input class="input" type="email" name="req_email" id="email" placeholder="JSmith@example.com" />
-	            </div>
-
-
-	          <div class="row">
-	            <div class="comments">
-	              <label for="comments" class="label_input_wrap">Comments</label>
-	              <textarea class="textarea" name="comments" id="comments" placeholder="Type your message here"></textarea>
-	            </div>
-	            </div>
-	            <div class="row">
-	              <div class="form-group">
-	                <input class="btn" type="button" value="Send" />
-	              </div>
-	            </div>
-	          </form>
-	        </div>
+					<section class="flex">
+						<div class="contact-info">
+							<h2 class="h2-subpage">Contact Information</h2>
+							<p class="text">
+								Lorem ipsum dolor sit amet, <br />
+								consectetur adipisicing elit. Molestias, magnam!
+							</p>
+							<ul>
+								<li>
+									<span class="text">123 Address Lane, AA 12345</span>
+								</li>
+								<li>
+									<span class="text">+1 (123) 456 7890</span>
+								</li>
+								<li>
+									<span class="text">GMChours@mywebsite.com</span>
+								</li>
+							</ul>
+						</div>
+					</section>
 				</section>
+			</div>
+		</main>
 
-				<section class="flex">
-	        <div class="contact-info">
-	          <h2 class="h2-subpage">Contact Information</h2>
-	          <p class="text">Lorem ipsum dolor sit amet, <br> consectetur adipisicing elit. Molestias, magnam!</p>
-	          <ul>
-	            <li>
-	              <span class="text">123 Address Lane, AA 12345</span>
-	            </li>
-	            <li>
-	              <span class="text">+1 (123) 456 7890</span>
-	            </li>
-	            <li>
-	              <span class="text">GMChours@mywebsite.com</span>
-	            </li>
-	          </ul>
-	        </div>
-				</section>
-			</section>
-    </div>
-  </main>
+		<!-- FOOTER -->
+		<footer>
+			<div class="border-bar"></div>
+			<div class="container">
+				<div class="l-footer">
+					<img src="./img/MainLogo.png" alt="logo" class="fLogo" />
+				</div>
 
-			<!-- FOOTER -->
-			<footer></footer>
-		</div>
+				<div class="copy">Copyright &copy; 2022 - All Rights Reserved.</div>
+
+				<div class="r-footer">
+					<ul class="fNav" id="fNav">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li>
+							<a href="tour.html">Tour Dates</a>
+						</li>
+						<li>
+							<a href="contact.html">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
 
 		<!-- LESS -->
 		<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
-		<script src="js/script.js"></script>
+		<!-- CUSTOM JS -->
+		<script src="./js/script.js"></script>
 	</body>
 </html>
