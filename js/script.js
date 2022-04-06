@@ -130,7 +130,21 @@ for (i = 0; i < acc.length; i++) {
 			panel.style.display = "flex";
 		}
 	});
+
 }
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+  
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "flex") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "flex";
+      }
+    });
+  }
 
 navToggle.addEventListener("click", function () {
 	links.classList.toggle("show_nav");
@@ -151,4 +165,5 @@ function readmore() {
 		btnText.innerHTML = "Read less";
 		moreText.style.display = "inline";
 	}
+
 }
