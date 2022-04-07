@@ -178,7 +178,7 @@ function printLocalEvents(res) {
 			res.events[i].url +
 			'" target="_blank">' +
 			res.events[i].short_title +
-			"</a>";
+			'</a>';
 	}
 	return localEventsHTML;
 }
