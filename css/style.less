@@ -25,16 +25,24 @@ a {
 	text-decoration: none;
 }
 
+h1,
+h2 {
+	.julius();
+}
+
 .border-bar {
-	height: 2px;
+	height: 3px;
 	width: 100%;
 	background: @gmc-rainbow;
 }
 
 // HEADER
 header {
+	background: rgba(255, 255, 255, 0.5);
+	top: 0;
+
 	.container {
-		margin: 1.5rem 5rem;
+		margin: 1.5rem 5rem 0;
 	}
 
 	nav {
@@ -101,10 +109,44 @@ header {
 	}
 }
 
+// HOME PAGE CAROUSEL
+.carousel {
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+	display: none;
+}
+
+.carousel .carousel__item img {
+	width: 100%;
+	object-fit: cover;
+	height: auto;
+}
+
+.carousel .carousel__item--visible {
+	display: block;
+	animation: fadeVisibility 0.5s;
+}
+
+@keyframes fadeVisibility {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: opacity linear;
+	}
+}
+
 // MAIN SECTIONS
 main {
 	.container {
 		margin: 0 5rem;
+		// position: absolute;
 	}
 }
 
@@ -203,6 +245,7 @@ main {
 
 .dates {
 	padding: 0 5% 4rem 5%;
+
 	h1,
 	h2 {
 		padding: 0 5%;
@@ -218,18 +261,22 @@ main {
 .individualEvent {
 	.monda();
 	padding: 0 5% 4rem 5%;
-	.mobileLocalEvents, .desktopLocalEvents {
+
+	.mobileLocalEvents,
+	.desktopLocalEvents {
 		display: flex;
 		flex-direction: column;
+
 		a {
 			text-decoration: none;
 			color: @black;
 			font-size: 0.7em;
 		}
+
 		a:hover {
 			text-decoration: underline;
 		}
-}
+	}
 }
 
 .accordion {
@@ -363,7 +410,6 @@ ul.breadcrumb {
 			min-height: 100%;
 		}
 	}
-
 }
 
 .eventMobileContent {
@@ -417,13 +463,12 @@ ul.breadcrumb {
 footer {
 	padding-top: 7rem;
 	bottom: 0;
-    position: absolute;
-    width: 100%;
-    height: 2.5rem;
+	position: absolute;
+	width: 100%;
+	height: 2.5rem;
 
 	.container {
 		margin: 1rem 5rem;
-
 		display: flex;
 		align-items: center;
 		justify-content: space-around;

@@ -1,7 +1,7 @@
 // NAVBAR TOGGLE
 const hamburger = document.getElementById("hamburger");
 const navUL = document.getElementById("nav-ul");
-const clientID = 'MjExMTY5MDV8MTY0OTIwNTYzMS42ODI1NjMz';
+const clientID = "MjExMTY5MDV8MTY0OTIwNTYzMS42ODI1NjMz";
 
 hamburger.addEventListener("click", () => {
 	navUL.classList.toggle("show");
@@ -38,34 +38,39 @@ var acc = document.getElementsByClassName("accordion");
 var accMobile = document.getElementsByClassName("accordionMobile");
 var i;
 
-if(params.has('city')){
-    var cityParam = params.get('city');
-    var cityName = '';
-    var state = '';
-    if(cityParam == 'nyc'){
-        cityName = 'New York City, NY';
-        state = 'NY'
-    }
-    if(cityParam == 'mem'){
-        cityName = 'Memphis, TN';
-        state = 'TN'
-    }
-    if(cityParam == 'atl'){
-        cityName = 'Atlanta, GA';
-        state = 'GA'
-    }
-    city.textContent = cityName;
-    breadCity.textContent = cityName;
-    breadMobileCity.textContent = '\u2039 '+cityName;
+if (params.has("city")) {
+	var cityParam = params.get("city");
+	var cityName = "";
+	var state = "";
+	if (cityParam == "nyc") {
+		cityName = "New York City, NY";
+		state = "NY";
+	}
+	if (cityParam == "mem") {
+		cityName = "Memphis, TN";
+		state = "TN";
+	}
+	if (cityParam == "atl") {
+		cityName = "Atlanta, GA";
+		state = "GA";
+	}
+	city.textContent = cityName;
+	breadCity.textContent = cityName;
+	breadMobileCity.textContent = "\u2039 " + cityName;
 
-    fetch('https://api.seatgeek.com/2/events?client_id='+clientID+'&venue.state='+state)
-    .then(function(res) {
-        return res.json();
-    })
-    .then(function(res) {
-        desktoplocalEvents.innerHTML = printLocalEvents(res);
-        mobilelocalEvents.innerHTML = printLocalEvents(res);
-    })
+	fetch(
+		"https://api.seatgeek.com/2/events?client_id=" +
+			clientID +
+			"&venue.state=" +
+			state
+	)
+		.then(function (res) {
+			return res.json();
+		})
+		.then(function (res) {
+			desktoplocalEvents.innerHTML = printLocalEvents(res);
+			mobilelocalEvents.innerHTML = printLocalEvents(res);
+		});
 }
 
 if (params.has("date")) {
@@ -166,9 +171,34 @@ function readmore() {
 }
 
 function printLocalEvents(res) {
-    var localEventsHTML = '';
-    for(var i = 0; i < res.events.length; i++){
-        localEventsHTML += '<a href="'+res.events[i].url+'" target="_blank">'+res.events[i].short_title+'</a>';
-    }
-    return localEventsHTML;
+	var localEventsHTML = "";
+	for (var i = 0; i < res.events.length; i++) {
+		localEventsHTML +=
+			'<a href="' +
+			res.events[i].url +
+			'" target="_blank">' +
+			res.events[i].short_title +
+			"</a>";
+	}
+	return localEventsHTML;
+}
+
+// HOME PAGE CAROUSEL
+const nextImageDelay = 5000;
+let slidePosition = 0;
+const slides = document.getElementsByClassName("carousel__item");
+const totalSlides = slides.length;
+
+setInterval(nextImage, nextImageDelay);
+function nextImage() {
+	slidePosition = (slidePosition + 1) % slides.length;
+
+	// function updateSlidePosition() {
+	for (let slide of slides) {
+		slide.classList.remove("carousel__item--visible");
+		slide.classList.add("carousel__item--hidden");
+	}
+
+	slides[slidePosition].classList.add("carousel__item--visible");
+	// }
 }
