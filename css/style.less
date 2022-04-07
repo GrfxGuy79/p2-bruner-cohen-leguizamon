@@ -30,6 +30,14 @@ h2 {
 	.julius();
 }
 
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
 .border-bar {
 	height: 3px;
 	width: 100%;
@@ -146,10 +154,19 @@ header {
 main {
 	.container {
 		margin: 0 5rem;
+		padding: 0 0 5rem;
 
-		// HOME PAGE
+		//********************
+		// HOME PAGE - WELCOME
 		.welcome {
 			text-align: center;
+
+			h1 {
+				font-size: 2.5rem;
+				background: @gmc-rainbow;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
 
 			iframe {
 				margin: 1rem 0;
@@ -158,22 +175,26 @@ main {
 			}
 		}
 
-		.ontour {
+		// HOME PAGE - ON TOUR
+		.ontoursec {
 			.skylines {
 				display: flex;
 				justify-content: space-around;
 				align-items: center;
 				flex-wrap: wrap;
 			}
+
 			.ontourloc {
 				text-align: center;
 				.julius();
 				margin: 1rem 0;
 			}
+
 			.ontourloc a {
 				text-decoration: none;
 				color: @black;
 			}
+
 			.cityskyline {
 				max-width: 250px;
 				width: 100%;
@@ -181,6 +202,47 @@ main {
 				margin: 0;
 			}
 		}
+
+		// HOME PAGE - REVIEWS
+		.reviewsec {
+			.reviews {
+				font-size: 0.75rem;
+				display: flex;
+				justify-content: space-around;
+				align-content: center;
+				flex-wrap: wrap;
+				.review1,
+				.review2,
+				.review3,
+				.review4 {
+					max-width: 300px;
+					margin: 0 1.5rem 1.5rem;
+				}
+				.review {
+					padding: 0;
+					margin: 0;
+					text-align: center;
+				}
+
+				.reviewer {
+					padding: 0;
+					margin: 0;
+					text-align: right;
+					font-weight: 600;
+
+					.revloc {
+						font-style: italic;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+
+		//********************
+		// TOUR PAGE
+
+		//********************
+		// CONTACT PAGE
 	}
 }
 
