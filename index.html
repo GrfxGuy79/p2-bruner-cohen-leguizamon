@@ -61,19 +61,19 @@
 			<!-- CAROUSEL -->
 			<div class="carousel">
 				<div class="carousel__item carousel__item--visible">
-					<img src="./img/carousel2.jpg" />
+					<img src="./img/carousel2.jpg" alt="carousel" />
 				</div>
 				<div class="carousel__item">
-					<img src="./img/carousel4.jpg" />
+					<img src="./img/carousel4.jpg" alt="carousel" />
 				</div>
 				<div class="carousel__item">
-					<img src="./img/carousel1.jpg" />
+					<img src="./img/carousel1.jpg" alt="carousel" />
 				</div>
 				<div class="carousel__item">
-					<img src="./img/carousel3.jpg" />
+					<img src="./img/carousel3.jpg" alt="carousel" />
 				</div>
 				<div class="carousel__item">
-					<img src="./img/carousel5.jpg" />
+					<img src="./img/carousel5.jpg" alt="carousel" />
 				</div>
 			</div>
 
@@ -85,7 +85,6 @@
 						height="315"
 						src="https://www.youtube.com/embed/RDGnVOIKcwk"
 						title="YouTube video player"
-						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowfullscreen
 					></iframe>
@@ -204,7 +203,6 @@
 							height="315"
 							src="https://www.youtube.com/embed/T4eNjvOZLps"
 							title="YouTube video player"
-							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen
 						></iframe>
@@ -214,7 +212,6 @@
 							height="315"
 							src="https://www.youtube.com/embed/4se7auC-6bo"
 							title="YouTube video player"
-							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen
 						></iframe>
@@ -224,7 +221,6 @@
 							height="315"
 							src="https://www.youtube.com/embed/wYFZcSjPyLc"
 							title="YouTube video player"
-							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 							allowfullscreen
 						></iframe>
@@ -263,5 +259,26 @@
 		<script src="https://cdn.jsdelivr.net/npm/less@4"></script>
 		<!-- CUSTOM JS -->
 		<script src="./js/script.js"></script>
+		<!-- HOME PAGE CAROUSEL -->
+		<script>
+			const nextImageDelay = 5000;
+			let slidePosition = 0;
+			const slides = document.getElementsByClassName("carousel__item");
+			const totalSlides = slides.length;
+
+			setInterval(nextImage, nextImageDelay);
+			function nextImage() {
+				slidePosition = (slidePosition + 1) % slides.length;
+
+				// function updateSlidePosition() {
+				for (let slide of slides) {
+					slide.classList.remove("carousel__item--visible");
+					slide.classList.add("carousel__item--hidden");
+				}
+
+				slides[slidePosition].classList.add("carousel__item--visible");
+				// }
+			}
+		</script>
 	</body>
 </html>
