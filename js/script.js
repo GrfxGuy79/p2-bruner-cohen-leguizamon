@@ -182,23 +182,3 @@ function printLocalEvents(res) {
 	}
 	return localEventsHTML;
 }
-
-// HOME PAGE CAROUSEL
-const nextImageDelay = 5000;
-let slidePosition = 0;
-const slides = document.getElementsByClassName("carousel__item");
-const totalSlides = slides.length;
-
-setInterval(nextImage, nextImageDelay);
-function nextImage() {
-	slidePosition = (slidePosition + 1) % slides.length;
-
-	// function updateSlidePosition() {
-	for (let slide of slides) {
-		slide.classList.remove("carousel__item--visible");
-		slide.classList.add("carousel__item--hidden");
-	}
-
-	slides[slidePosition].classList.add("carousel__item--visible");
-	// }
-}
