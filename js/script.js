@@ -118,7 +118,7 @@ if (params.has("dates")) {
 		const newPanelDiv = document.createElement("div");
 		newPanelDiv.className = "panelMobile";
 		newPanelDiv.innerHTML =
-			'<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat dolorem unde assumenda dolore cupiditate. Adipisci esse debitis nesciunt? Sapiente praesentium corporis deleniti cumque minus sint, labore id! Animi, molestiae.</p><div class="purchase"><div><a href=#>Buy Tickets</a></div></div>';
+			'<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat dolorem unde assumenda dolore cupiditate. Adipisci esse debitis nesciunt? Sapiente praesentium corporis deleniti cumque minus sint, labore id! Animi, molestiae.</p><div class="purchase"><div><a href="#"><button>Buy Tickets</button></a></div></div>';
 
 		const newPContent = document.createTextNode(
 			"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et placeat dolorem unde assumenda dolore cupiditate. Adipisci esse debitis nesciunt? Sapiente praesentium corporis deleniti cumque minus sint, labore id! Animi, molestiae."
