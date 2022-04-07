@@ -25,16 +25,32 @@ a {
 	text-decoration: none;
 }
 
+h1,
+h2 {
+	.julius();
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
 .border-bar {
-	height: 2px;
+	height: 3px;
 	width: 100%;
 	background: @gmc-rainbow;
 }
 
 // HEADER
 header {
+	background: rgba(255, 255, 255, 0.5);
+	top: 0;
+
 	.container {
-		margin: 1.5rem 5rem;
+		margin: 1.5rem 5rem 0;
 	}
 
 	nav {
@@ -101,10 +117,144 @@ header {
 	}
 }
 
+// HOME PAGE CAROUSEL
+.carousel {
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel .carousel__item,
+.carousel .carousel__item--hidden {
+	display: none;
+}
+
+.carousel .carousel__item img {
+	width: 100%;
+	object-fit: cover;
+	height: auto;
+}
+
+.carousel .carousel__item--visible {
+	display: block;
+	animation: fadeVisibility 0.5s;
+}
+
+@keyframes fadeVisibility {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: opacity linear;
+	}
+}
+
 // MAIN SECTIONS
 main {
 	.container {
 		margin: 0 5rem;
+		padding: 0 0 5rem;
+
+		//********************
+		// HOME PAGE - WELCOME
+		.welcome {
+			text-align: center;
+
+			h1 {
+				font-size: 2.5rem;
+				background: @gmc-rainbow;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			iframe {
+				margin: 1rem 0;
+				width: 100%;
+				max-width: 80%;
+			}
+		}
+
+		// HOME PAGE - ON TOUR
+		.ontoursec {
+			.skylines {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-wrap: wrap;
+			}
+
+			.ontourloc {
+				text-align: center;
+				.julius();
+				margin: 1rem 0;
+			}
+
+			.ontourloc a {
+				text-decoration: none;
+				color: @black;
+			}
+
+			.cityskyline {
+				max-width: 250px;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+			}
+		}
+
+		// HOME PAGE - REVIEWS
+		.reviewsec {
+			.reviews {
+				font-size: 0.75rem;
+				display: flex;
+				justify-content: space-around;
+				align-content: center;
+				flex-wrap: wrap;
+				.review1,
+				.review2,
+				.review3,
+				.review4 {
+					max-width: 300px;
+					margin: 0 1.5rem 1.5rem;
+				}
+				.review {
+					padding: 0;
+					margin: 0;
+					text-align: center;
+				}
+
+				.reviewer {
+					padding: 0;
+					margin: 0;
+					text-align: right;
+					font-weight: 600;
+
+					.revloc {
+						font-style: italic;
+						font-weight: 400;
+					}
+				}
+			}
+		}
+
+		.videosec {
+			.videos {
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+				iframe {
+					margin: 1rem;
+					max-width: 560px;
+					width: 100%;
+				}
+			}
+		}
+		//********************
+		// TOUR PAGE
+
+		//********************
+		// CONTACT PAGE
 	}
 }
 
@@ -203,6 +353,7 @@ main {
 
 .dates {
 	padding: 0 5% 4rem 5%;
+
 	h1,
 	h2 {
 		padding: 0 5%;
@@ -218,18 +369,22 @@ main {
 .individualEvent {
 	.monda();
 	padding: 0 5% 4rem 5%;
-	.mobileLocalEvents, .desktopLocalEvents {
+
+	.mobileLocalEvents,
+	.desktopLocalEvents {
 		display: flex;
 		flex-direction: column;
+
 		a {
 			text-decoration: none;
 			color: @black;
 			font-size: 0.7em;
 		}
+
 		a:hover {
 			text-decoration: underline;
 		}
-}
+	}
 }
 
 .accordion {
@@ -363,7 +518,6 @@ ul.breadcrumb {
 			min-height: 100%;
 		}
 	}
-
 }
 
 .eventMobileContent {
@@ -417,13 +571,12 @@ ul.breadcrumb {
 footer {
 	padding-top: 7rem;
 	bottom: 0;
-    position: absolute;
-    width: 100%;
-    height: 2.5rem;
+	position: absolute;
+	width: 100%;
+	height: 2.5rem;
 
 	.container {
 		margin: 1rem 5rem;
-
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
